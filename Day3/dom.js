@@ -37,7 +37,10 @@
 //전부 가져오려면 querySelecorAll을 사용한다.
 
 const title = document.querySelector(".hello h1");
+const title2 = document.querySelector("#title");
 
+
+title2.addEventListener("mouseenter", handleMouseEnter);
 
 console.log(title);
 title.innerText = "hello";
@@ -47,13 +50,17 @@ title.style.color = "blue";
 
 function handleTitleClick(){
     console.log("title was clicked!");
-    title.style.color = "tomato";
+    title.style.color = "purple";
+    title.innerText = "title was clicked!"
     return false;
 }
 
 function handleMouseEnter(){
     title.style.color = "teal";
     title.innerText = "mouse is on me!"
+    title2.style.color = "teal";
+    title2.innerText = "mouse is on me!"
+
 }
 
 function handleMouseLeave(){
@@ -67,6 +74,7 @@ title.addEventListener("mouseenter", handleMouseEnter);
 // title.onmouseenter = handleMouseEnter;
 title.addEventListener("mouseleave", handleMouseLeave);
 
+//element web-api를 통해 여러 이벤트들을 확인할 수 있다.
 
 console.dir(title);
 //addEventListener -> function을 바로 실행시키지 않고, 특정 event가 발생했을때 해당 function을 실행하도록 한다.
@@ -76,4 +84,20 @@ function handleWindowResize(){
     document.body.style.backgroundColor = "tomato";
 }
 
+
+function handleWindowCopy(){
+    alert("copier!");
+}
+
+function handleWindowOffline(){
+    alert("no wifi");
+}
+
+function handleWindowOnline(){
+    alert("connected")
+}
+
 window.addEventListener("resize", handleWindowResize);
+window.addEventListener("copy", handleWindowCopy);
+window.addEventListener("offline", handleWindowOffline);
+window.addEventListener("online", handleWindowOnline);
