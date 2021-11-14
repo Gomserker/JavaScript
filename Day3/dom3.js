@@ -24,18 +24,25 @@ const h1 = document.querySelector("#title");
 //HTML elements에 해당 클래스가 포함되어 있는지 확인할 수 있다.
 
 
-function handleTitleClick(){
-    const clickedClass = "clicked";
+// function handleTitleClick(){
+//     const clickedClass = "clicked";
     
-    if(h1.classList.contains(clickedClass)){
-        h1.classList.remove(clickedClass)
-    } else {
-        h1.classList.add(clickedClass)
-    }
-}
+//     if(h1.classList.contains(clickedClass)){
+//         h1.classList.remove(clickedClass)
+//     } else {
+//         h1.classList.add(clickedClass)
+//     }
+// }
 
 //h1의 class에 "변수" clickedClass가 포함되어 있다면
 //class 목록에 "변수" clickedClass를 삭제해라 포함되어 있지 않다면
 //class 목록에 "변수" clickedClass를 추가해라
 
+//하지만 더 쉬운 방법도 있다. 바로 toggle function
+
+function handleTitleClick(){
+    h1.classList.toggle("clicked");
+}
+//toggle은 h1의 classList에 "clicked" 클래스가 이미 있는지 확인해서
+//있으면 제거해주고, 없으면 추가해준다. 스위치의 개념이네?
 h1.addEventListener("click", handleTitleClick);
