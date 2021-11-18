@@ -17,10 +17,9 @@ function onLoginSubmit(event) {
     //username이라는 변수에 입력된 username value를 저장.
     loginForm.classList.add(HIDDEN_CLASSNAME);
     // String이랑 변수 합치는 두가지 방법
-    greeting.innerText = "Hello, " + username;
+    
     //printf 보다 좀 더 편하네
-    greeting.innerText = `hello, ${username}`;
-    greeting.classList.remove(HIDDEN_CLASSNAME);
+    paintGreetings(username);
 }
 
 // function handleLinkClick(event){
@@ -30,14 +29,18 @@ function onLoginSubmit(event) {
 
 loginForm.addEventListener("submit", onLoginSubmit);
 
+function paintGreetings(username){
+    greeting.innerText = `hello, ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+}
+
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null){
     loginForm.classList.remove(HIDDEN_CLASSNAME);
     loginForm.addEventListener("submit", onLoginSubmit);
 } else {
-    greeting.classList.remove(HIDDEN_CLASSNAME);
-    greeting.innerText = `hello, ${savedUsername}`;
+    paintGreetings(savedUsername);
 }
 // link.addEventListener("click", handleLinkClick);
 
