@@ -56,3 +56,9 @@ if(savedToDos !== null){
     parsedToDos.forEach(paintToDo);
     //forEach는 배열의 각 속성에 대해 함수를 실행시킨다.
 }
+
+function Filter(){
+
+}
+
+[1, 2, 3, 4].filter(Filter)
