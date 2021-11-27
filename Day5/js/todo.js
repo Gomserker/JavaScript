@@ -14,8 +14,9 @@ function saveToDos(){
 
 function deleteTodo(event){
     const li = event.target.parentElement;
-    console.log(li.id);
     li.remove();
+    toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));
+    saveToDos();
 }
 
 function paintToDo(newTodo){
@@ -57,8 +58,3 @@ if(savedToDos !== null){
     //forEach는 배열의 각 속성에 대해 함수를 실행시킨다.
 }
 
-function Filter(){
-
-}
-
-[1, 2, 3, 4].filter(Filter)
