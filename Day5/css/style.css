@@ -52,3 +52,11 @@ body {
   font-weight: 700;
   color: aliceblue;
 }
+
+ul {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+
