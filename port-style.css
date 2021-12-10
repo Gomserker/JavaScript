@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Kosugi&family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Murecho:wght@300;500;600;700;800&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Kosugi", sans-serif;
-  font-family: "Poppins", sans-serif;
+  font-family: "Murecho", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -18,14 +17,13 @@ p {
   width: 100%;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: bisque;
+  background-image: url(3.jpg);
 }
 
 .banner .content {
   max-width: 1000px;
-  text-align: center;
+  color: #fff;
 }
 
 .banner .content h2 {
